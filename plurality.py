@@ -48,35 +48,37 @@ def formalized_plurality(values, eps):
 
 def choose_one_value(plurality_clusters):
     """
-    zwraca srednina najwiekszego clustera (w przypadku kliku, pierwszego)
+    zwraca pierwsza liczbe najwiekszego clustera (w przypadku kliku, pierwszego)
     """
     cluster = plurality_clusters[0]
     return cluster[0][1]
 
 
-values = [0.486, 0.483, 0.530, 0.495, 0.489, 0.500, 0.481]
-eps = 0.01
+if __name__ == "__main__":
 
-clusters, winners = formalized_plurality(values, eps)
+    values = [0.486, 0.483, 0.530, 0.495, 0.489, 0.500, 0.481]
+    eps = 0.01
 
-print("Wartosci:",values)
+    clusters, winners = formalized_plurality(values, eps)
 
-print("\nEpsilon:",eps)
+    print("Wartosci:",values)
 
-print("\nClustery:")
-for c in clusters:
-    print([f"x{idx}" for idx, val in c])
+    print("\nEpsilon:",eps)
 
-print("\nWartosci clusterow:")
-for c in clusters:
-    print([val for idx, val in c])
+    print("\nClustery:")
+    for c in clusters:
+        print([f"x{idx}" for idx, val in c])
 
-print("\nWygrane clustery:")
-for w in winners:
-    print([f"x{idx}" for idx, val in w])
+    print("\nWartosci clusterow:")
+    for c in clusters:
+        print([val for idx, val in c])
 
-print("\nWartosci wygranych clusterow:")
-for w in winners:
-    print([val for idx, val in w])
+    print("\nWygrane clustery:")
+    for w in winners:
+        print([f"x{idx}" for idx, val in w])
 
-print("\nWynik algorytmu:", choose_one_value(winners))
+    print("\nWartosci wygranych clusterow:")
+    for w in winners:
+        print([val for idx, val in w])
+
+    print("\nWynik algorytmu:", choose_one_value(winners))
