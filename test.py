@@ -95,9 +95,9 @@ class VoterSimulation:
         self._plot_results(res, eps, smoothing_b)
 
     def _plot_results(self, res, eps, b):
-        plt.figure(figsize=(12, 16))  # Wyższy wykres, bo więcej danych
+        plt.figure(figsize=(12, 16))
 
-        # 1. Wejścia
+        # Wejścia
         plt.subplot(5, 1, 1)
         plt.title("Wejścia: 3 czujniki z błędami")
         plt.plot(self.t, self.s1, 'g-', alpha=0.5, label='S1')
@@ -107,7 +107,7 @@ class VoterSimulation:
         plt.legend(loc='upper right')
         plt.grid(True)
 
-        # 2. Majority
+        # Majority
         plt.subplot(5, 1, 2)
         plt.title(f"Majority Voter (eps={eps})")
         plt.plot(self.t, res["maj"], 'o-', markersize=3, color='purple')
@@ -115,7 +115,7 @@ class VoterSimulation:
         plt.ylabel("Wyjście")
         plt.grid(True)
 
-        # 3. Plurality
+        # Plurality
         plt.subplot(5, 1, 3)
         plt.title(f"Plurality Voter (eps={eps})")
         plt.plot(self.t, res["plu"], 'o-', markersize=3, color='orange')
@@ -123,7 +123,7 @@ class VoterSimulation:
         plt.ylabel("Wyjście")
         plt.grid(True)
 
-        # 4. Basic Smoothing
+        # Basic Smoothing
         plt.subplot(5, 1, 4)
         plt.title(f"Basic Smoothing Voter (eps={eps}, b={b})")
         plt.plot(self.t, res["bas"], 'o-', markersize=3, color='teal')
@@ -131,7 +131,7 @@ class VoterSimulation:
         plt.ylabel("Wyjście")
         plt.grid(True)
 
-        # 5. Modified Smoothing
+        # Modified Smoothing
         plt.subplot(5, 1, 5)
         plt.title(f"Modified Smoothing Voter (eps={eps}, base_b={b})")
         plt.plot(self.t, res["mod"], 'o-', markersize=3, color='magenta')
