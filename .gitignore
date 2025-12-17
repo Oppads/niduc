@@ -1,0 +1,24 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Wirtualne środowiska (Virtual Envs) ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- IDE i Edytory ---
+.idea/
+.vscode/
+*.swp
+
+# --- Dystrybucja i budowanie ---
+build/
+dist/
+*.egg-info/
+
+# --- Systemowe ---
+.DS_Store
+Thumbs.db
