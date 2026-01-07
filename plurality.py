@@ -51,6 +51,8 @@ def choose_one_value(plurality_clusters):
     zwraca pierwsza liczbe najwiekszego clustera (w przypadku kliku, pierwszego)
     """
     cluster = plurality_clusters[0]
+    if len(cluster) == 1:
+        return None
     return cluster[0][1]
 
 

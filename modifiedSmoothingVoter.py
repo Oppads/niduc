@@ -39,9 +39,7 @@ def modified_smoothing_voter(
         return closest, base_smoothing_threshold
 
     # Brak wyniku → aktualizacja progu kumulacyjnego
-    if closest > prev_output:
-        cumulative_threshold += base_smoothing_threshold
-    else:
-        cumulative_threshold -= base_smoothing_threshold
+
+    cumulative_threshold += base_smoothing_threshold
 
     return None, cumulative_threshold
